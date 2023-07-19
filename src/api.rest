@@ -1,0 +1,35 @@
+### Consulta todos los empleados
+GET http://192.168.56.1:3000/empleados
+
+### Consulta un empleado
+GET http://localhost:3000/empleados/2
+
+### Agregar un empleado
+POST http://localhost:3000/empleados
+Content-Type: application/json
+
+{
+    "nombre": "MiCompadre",
+    "puesto": "Vigilancia",
+    "email": "Micompa@gmail.com",
+    "sueldo": 800,
+    "created_at": "2023-07-11",
+    "modify_at": "2023-07-11"
+  }
+
+### Actualizar un empleado
+PUT http://localhost:3000/empleados/2
+Content-Type: application/json
+  {
+    "id": 2,
+    "nombre": "Margarita",
+    "puesto": "Licenciada",
+    "email": "Magui@gmail.com",
+    "sueldo": 8000,
+    "created_at": "2023-07-11",
+    "modify_at": "2023-07-11"
+  }
+
+### Eliminar un empleado
+DELETE http://localhost:3000/empleados
+Content-Type: application/json
