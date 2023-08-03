@@ -9,41 +9,41 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.empleadosController = void 0;
+exports.bloquesController = void 0;
 const database_1 = require("../database");
-class EmpleadosController {
-    getEmpleados(req, res) {
+class BloquesController {
+    getBloques(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.pool.query('SELECT * FROM tb_empleados');
+            const result = yield database_1.pool.query('SELECT * FROM tb_estacionamiento');
             res.json(result[0]);
         });
     }
-    getByIdEmpleado(req, res) {
+    getByIdBloque(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const result = yield database_1.pool.query('SELECT * FROM tb_empleados WHERE id_empleado= ?', [id]);
+            const result = yield database_1.pool.query('SELECT * FROM tb_estacionamiento WHERE id_estacionamiento= ?', [id]);
             res.json(result[0]);
         });
     }
-    createEmpleados(req, res) {
+    createBloque(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.pool.query('INSERT INTO tb_empleados SET ?', [req.body]);
+            yield database_1.pool.query('INSERT INTO tb_estacionamiento SET ?', [req.body]);
             res.json({ message: 'Registro guardado' });
         });
     }
-    deleteEmpleado(req, res) {
+    deleteBloque(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.pool.query('DELETE FROM tb_empleados WHERE id_empleado=  ?', [id]);
+            yield database_1.pool.query('DELETE FROM tb_estacionamiento WHERE id_estacionamiento=  ?', [id]);
             res.json({ message: 'Registro Eliminado' });
         });
     }
-    updateEmpleado(req, res) {
+    updateBloque(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.pool.query('UPDATE tb_empleados SET ? WHERE id_empleado= ?', [req.body, id]);
+            yield database_1.pool.query('UPDATE tb_estacionamiento SET ? WHERE id_estacionamiento= ?', [req.body, id]);
             res.json({ message: 'Registro Actualizado' });
         });
     }
 }
-exports.empleadosController = new EmpleadosController();
+exports.bloquesController = new BloquesController();

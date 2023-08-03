@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import indexRoutes from './routes/index-routes';
 import empleadosRoutes from './routes/empleados-routes';
 import cors from 'cors';
+import { bloquesController } from './controllers/bloques-controllers';
+import bloquesRoutes from './routes/bloques-routes';
 
 
 class Server{
@@ -26,6 +28,7 @@ constructor (){
 routes():void{                      //grupos de rutas
     this.app.use('/',indexRoutes);
     this.app.use('/empleados',empleadosRoutes);
+    this.app.use('/bloques',bloquesRoutes);
 
 }
 

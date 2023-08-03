@@ -9,10 +9,10 @@ class EmpleadosRoutes {
     }
     config() {
         this.router.get('/', empleados_controller_1.empleadosController.getEmpleados);
-        this.router.get('/:id_empleado', empleados_controller_1.empleadosController.getByIdEmpleado);
+        this.router.get('/:id', empleados_controller_1.empleadosController.getByIdEmpleado);
         this.router.post('/', empleados_controller_1.empleadosController.createEmpleados);
-        this.router.put('/:id_empleado', empleados_controller_1.empleadosController.updateEmpleado); //tarea 
-        this.router.delete('/:id_empleado', empleados_controller_1.empleadosController.deleteEmpleado);
+        this.router.put('/:id', empleados_controller_1.empleadosController.updateEmpleado); //tarea 
+        this.router.delete('/:id', empleados_controller_1.empleadosController.deleteEmpleado);
     }
 }
 const empleadosRoutes = new EmpleadosRoutes(); //<--

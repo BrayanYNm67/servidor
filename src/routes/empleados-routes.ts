@@ -11,10 +11,10 @@ class EmpleadosRoutes{
 
     config():void{
         this.router.get('/',empleadosController.getEmpleados);
-        this.router.get('/:id', empleadosController.getByIdEmpleado);
+        this.router.get('/:id_empleado', empleadosController.getByIdEmpleado);
         this.router.post('/',empleadosController.createEmpleados);
-        this.router.put('/:id',empleadosController.updateEmpleado);    //tarea 
-        this.router.delete('/:id',empleadosController.deleteEmpleado);
+        this.router.put('/:id_empleado',empleadosController.updateEmpleado);    //tarea 
+        this.router.delete('/:id_empleado',empleadosController.deleteEmpleado);
 
     }
 

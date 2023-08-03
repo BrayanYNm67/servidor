@@ -5,5 +5,5 @@ export const pool= createPool({
     user:'root',
     password:'',
     port:3306,
-    database:'gds0533'
+    database:'smartpark'
 });
